@@ -8,7 +8,7 @@ export const RandomMansPage = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:4000/superheroes')
+      .get('http://localhost:4000/random-mans')
       .then((res) => {
         setData(res.data);
         setIsLoading(false);

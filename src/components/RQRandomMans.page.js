@@ -1,9 +1,7 @@
 import axios from 'axios';
 import { useQuery } from 'react-query';
-
-const fetchRandomMans = () => {
-  return axios.get('http://localhost:4000/superheroes1');
-};
+import { Link } from 'react-router-dom';
+import { useRandomMansData } from '../hooks/useRandomMansData';
 
 export const RQRandomMansPage = () => {
   const onSuccess = (data) => {
@@ -12,15 +10,8 @@ export const RQRandomMansPage = () => {
   const onError = (err) => {
     console.log('Fetching is not good', err);
   };
-  const { isLoading, data, isError, error, isFetching, refetch } = useQuery(
-    'random-mans',
-    fetchRandomMans,
-    {
-      enabled: false,
-      onSuccess,
-      onError,
-    }
-  );
+  const { isLoading, data, isError, error, isFetching, refetch } =
+    useRandomMansData(onSuccess, onError);
 
   return (
     <>
@@ -31,8 +22,13 @@ export const RQRandomMansPage = () => {
           <h2>React Query Random Mans Pages</h2>
           <button onClick={refetch}>Fetch Random Mans</button>
           {data?.data.map((man) => (
-            <div key={man.name}>{man.name}</div>
+            <div key={man.id}>
+              <Link to={`/rq-random-mans/${man.id}`}>{man.name}</Link>
+            </div>
           ))}
+          {/* {data.map((name) => (
+            <div key={name}>{name}</div>
+          ))} */}
         </>
       )}
     </>

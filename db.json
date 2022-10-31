@@ -1,5 +1,5 @@
 {
-  "superheroes": [
+  "random-mans": [
     {
       "id": 1,
       "name": "Man",
@@ -14,6 +14,54 @@
       "id": 3,
       "name": "Human",
       "alterEgo": "Random Human"
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "name": "first"
+    },
+    {
+      "id": 2,
+      "name": "second"
+    },
+    {
+      "id": 3,
+      "name": "third"
+    }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "label": "blue"
+    },
+    {
+      "id": 2,
+      "label": "green"
+    },
+    {
+      "id": 3,
+      "label": "red"
+    },
+    {
+      "id": 4,
+      "label": "yellow"
+    },
+    {
+      "id": 5,
+      "label": "orange"
+    }
+  ],
+  "users": [
+    {
+      "id": "email@mail.com",
+      "dependency": "some"
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "some",
+      "desription": "something new"
     }
   ]
 }
